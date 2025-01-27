@@ -1,0 +1,2 @@
+npx shadcn@latest init
+Chọn legacy-peer-deps
