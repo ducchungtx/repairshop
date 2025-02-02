@@ -1,29 +1,25 @@
-"use client";
+"use client"
 
-import { ButtonHTMLAttributes } from "react";
-import { useRouter } from "next/router";
-import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { ButtonHTMLAttributes } from "react"
 
 type Props = {
-  title?: string,
+  title: string,
   className?: string,
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | null | undefined,
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
-function BackButton({ title, className, variant, ...props }: Props) {
-  const router = useRouter();
-
+export function BackButton(
+  { title, variant, className, ...props }: Props
+) {
+  const router = useRouter()
   return (
     <Button
-      className={className}
       variant={variant}
+      className={className}
       onClick={() => router.back()}
       title={title}
-      {...props}
-    >
-      {title || "Back"}
-    </Button>
+    >{title}</Button>
   )
 }
-
-export default BackButton
