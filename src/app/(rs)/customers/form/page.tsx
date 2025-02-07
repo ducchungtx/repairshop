@@ -2,6 +2,7 @@ import { BackButton } from "@/components/BackButton";
 import { getCustomer } from "@/lib/queries/getCustomer";
 
 import * as Sentry from "@sentry/nextjs";
+import CustomerForm from "@/app/(rs)/customers/form/CustomerForm";
 
 const CustomerFormPage = async ({
   searchParams,
@@ -22,8 +23,11 @@ const CustomerFormPage = async ({
           </>
         );
         // put the form here
+      } else {
+        // create mode
+        <CustomerForm customer={customer} />;
       }
-      // create mode
+      
       console.log("customer", customer);
     }
   } catch (error) {

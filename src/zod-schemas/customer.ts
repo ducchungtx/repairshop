@@ -14,4 +14,6 @@ export const insertCustomerSchema = createInsertSchema(customers, {
 
 export const selectCustomerSchema = createSelectSchema(customers);
 
-export type insertCustomerSchemaType = typeof insertCustomerSchema;
+export type insertCustomerSchemaType = typeof insertCustomerSchema._type;
+
+export type selectCustomerSchemaType = typeof selectCustomerSchema._type;

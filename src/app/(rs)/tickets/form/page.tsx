@@ -63,7 +63,7 @@ const TicketFormPage = async ({
       // return ticket form here
       console.log("ticket", ticket);
       console.log("customer", customer);
-
+      
     }
 
   } catch (error) {
